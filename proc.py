@@ -65,8 +65,9 @@ def join_all_langs_into_list(lang_dict, lang_results):
     result = list()
     for key, value in lang_dict.items():
         for line in value:
-            if len(line) > 0:
-                result.append(line + "-" + lang_results[key])
+            if len(line.rstrip()) > 1:
+                new_line = line.rstrip() + "-" + lang_results[key]
+                result.append(new_line)
     return result
 
 def save_files(train_file, eval_file):
