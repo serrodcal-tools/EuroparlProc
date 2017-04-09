@@ -1,6 +1,6 @@
 # EuroparlProc
 
-Utility to process Europarl files needed for https://github.com/MULCIA/PLNLangDetection
+Utility to process [Europarl](http://www.statmt.org/europarl/) files needed for https://github.com/MULCIA/PLNLangDetection
 
 ## Languages supported
 
