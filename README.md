@@ -10,11 +10,11 @@ Danish, German, Greek, English, Spanish, Finnish, French, Italian, Dutch and Por
 
 To run, needed a directory for each language supported. In the same directory run:
 
-´$ python3 proc.py´
+`$ python3 proc.py`
 
 The result is 2 files: train.txt and eval.txt with same structure, an example is given below:
 
-´
+`
 Merci Madame la Commissaire-0 0 0 0 0 0 1 0 0 0
 Propongo allora di approvare in toto la relazione Cappato perfezionandola ulteriormente approvando l'emendamento n 44 invece del n 35-0 0 0 0 0 0 0 1 0 0
 Situatie in Albanië na de verkiezingen-0 0 0 0 0 0 0 0 1 0
@@ -31,6 +31,6 @@ Daremo il nostro appoggio esclusivamente agli specifici punti della relazione cu
  I have voted against the Report on Turkey-0 0 0 1 0 0 0 0 0 0
 Je ne retrouve pas cette ambition dans les documents qui nous sont proposés-0 0 0 0 0 0 1 0 0 0
 Työjärjestyksen mukaisesti kysymyksiin 48 49 ja 50 joiden esittäjät ovat jäsenet Fitzsimons Korakas ja Thors vastataan kirjallisesti-0 0 0 0 0 1 0 0 0 0
-´
+`
 
 In the end line, there is a vector to indicate the language of the previous text in the same order than in Languages supported.
