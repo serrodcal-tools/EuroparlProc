@@ -8,9 +8,9 @@ inside /txt directory from http://www.statmt.org/europarl/v7/europarl.tgz and it
 The result will have a shuffle of differents languages sentences between 1 and 20 words lenght like this:
 
 ----------------------------------
-this is an example of sentences-EN
-esto es un ejemplo de frase-ES
-c'est un exemple de phrase-FR
+this is an example of sentences-0 0 0 1 0 0 0 0 0 0
+esto es un ejemplo de frase-0 0 0 0 1 0 0 0 0 0
+c'est un exemple de phrase-0 0 0 0 0 0 1 0 0 0
 ----------------------------------
 
 And, the result will have a million differents words per language for trainning, and finally, will have 100.000 differents words per language
