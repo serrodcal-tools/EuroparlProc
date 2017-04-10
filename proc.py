@@ -43,9 +43,9 @@ def filter(line):
     return not any(x in line for x in invalid_character)
 
 def replace(line):
-    new_line = ""
+    new_line = line
     for c in replace_character:
-        new_line = line.replace(c,'')
+        new_line = new_line.replace(c,'')
     return new_line
 
 def process_line(lines):
