@@ -34,8 +34,10 @@ lang_num_words = dict()
 
 lang_dict = dict()
 
-invalid_character = ['-',':',';','<','(','–']
-replace_character = ['.',',','"']
+invalid_character = ['<']
+replace_character = ['.',',','"','(',')','–','/','-',':',';']
+
+count_corpus = {'da':set(), 'de':set(), 'el':set(), 'en':set(), 'es':set(), 'fi':set(), 'fr':set(), 'it':set(), 'nl':set(), 'pt':set()}
 
 # Secondary functions
 
@@ -55,6 +57,15 @@ def process_line(lines):
         if len(new_line) > 0 and filter(new_line) and new_line.count(' ') <= 19:
             result.append(new_line)              
     return result
+
+def report_corpus(line, key):
+    l = line.split(' ')
+    s = count_corpus[key]
+    if s:
+        count_corpus[key].update(l)
+    else:
+        count_corpus[key] = set(l)
+
 
 # Main Functions
 
@@ -76,6 +87,7 @@ def join_all_langs_into_list(lang_dict, lang_results):
             line = line.strip()
             if len(line.rstrip()) > 1:
                 new_line = line.rstrip() + "-" + lang_results[key]
+                report_corpus(line.rstrip(), key)
                 result.append(new_line)
     return result
 
@@ -107,6 +119,12 @@ all_lang_result = join_all_langs_into_list(lang_dict, lang_results)
 shuffle(all_lang_result)
 
 print("Shuffeling...")
+
+print("Report of corpus...")
+
+for key, value in count_corpus.items():
+    print("Lang: " + key + ", corpus: " + str(len(value)))
+
 
 train_file = all_lang_result[:int(len(all_lang_result)/2)]
 eval_file = all_lang_result[int(len(all_lang_result)/2):]
