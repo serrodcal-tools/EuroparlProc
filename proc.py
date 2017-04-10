@@ -45,7 +45,7 @@ def filter(line):
 def replace(line):
     new_line = ""
     for c in replace_character:
-        new_line = line.replace(c,"")
+        new_line = line.replace(c,'')
     return new_line
 
 def process_line(lines):
@@ -55,15 +55,6 @@ def process_line(lines):
         if len(new_line) > 0 and filter(line) and line.count(' ') <= 19:
             result.append(new_line)              
     return result
-        
-"""if "<" not in line: #Remove xml lines
-            if "(" not in line: #Remove () lines
-                if line.count(' ') <= 19: #Has between 1 and 20 words
-                    line = line.replace(",", "")
-                    line = line.replace(".", "")
-                    line = line.replace(":", "")
-                    result.append(line)"""
-    
 
 # Main Functions
 
