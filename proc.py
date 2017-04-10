@@ -52,7 +52,7 @@ def process_line(lines):
     result = list()
     for line in lines:
         new_line = replace(line)
-        if len(new_line) > 0 and filter(line) and line.count(' ') <= 19:
+        if len(new_line) > 0 and filter(new_line) and new_line.count(' ') <= 19:
             result.append(new_line)              
     return result
 
