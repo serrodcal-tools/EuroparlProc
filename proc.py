@@ -34,19 +34,36 @@ lang_num_words = dict()
 
 lang_dict = dict()
 
+invalid_character = ['-',':',';','<','(','–']
+replace_character = ['.',',','"']
+
 # Secondary functions
+
+def filter(line):
+    return not any(x in line for x in invalid_character)
+
+def replace(line):
+    new_line = ""
+    for c in replace_character:
+        new_line = line.replace(c,"")
+    return new_line
 
 def process_line(lines):
     result = list()
     for line in lines:
-        if "<" not in line: #Remove xml lines
+        new_line = replace(line)
+        if len(new_line) > 0 and filter(line) and line.count(' ') <= 19:
+            result.append(new_line)              
+    return result
+        
+"""if "<" not in line: #Remove xml lines
             if "(" not in line: #Remove () lines
                 if line.count(' ') <= 19: #Has between 1 and 20 words
                     line = line.replace(",", "")
                     line = line.replace(".", "")
                     line = line.replace(":", "")
-                    result.append(line)
-    return result
+                    result.append(line)"""
+    
 
 # Main Functions
 
