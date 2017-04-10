@@ -10,7 +10,7 @@ The result will have a shuffle of differents languages sentences between 1 and 2
 ----------------------------------
 this is an example of sentences-EN
 esto es un ejemplo de frase-ES
-ce est un exemple de phrase-FR
+c'est un exemple de phrase-FR
 ----------------------------------
 
 And, the result will have a million differents words per language for trainning, and finally, will have 100.000 differents words per language
