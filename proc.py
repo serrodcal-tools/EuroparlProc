@@ -72,9 +72,8 @@ def report_corpus(line, key):
 def get_result_by_lang_directory(directory):
     result = list()
     pwd = os.getcwd() + "/" + directory
-    print("At this moment, starting with " + pwd)
     for filename in os.listdir(pwd):
-        print("Processing " + filename)
+        print("Processing " + filename + ", at " + directory + " directory.")
         lines = tuple(open(pwd + "/" + filename, 'r'))
         lines_processed = process_line(lines)
         result += lines_processed
