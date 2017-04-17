@@ -37,7 +37,7 @@ lang_dict = dict()
 
 invalid_character = ['<']
 replace_character = ['.',',','"','(',')','–','−','_','/','-',':',';','0','1','2','3','4','5','6','7','8','9',
-'«','=','&','%','…','„','<','>','’','»','[',']','º','”','+','$','€']
+'«','=','&','%','…','„','<','>','’','»','[',']','º','”','+','$','€','+']
 
 count_corpus = {'da':set(), 'de':set(), 'el':set(), 'en':set(), 'es':set(), 'fi':set(), 'fr':set(), 'it':set(), 'nl':set(), 'pt':set()}
 
@@ -75,6 +75,7 @@ def report_corpus(line, key):
         count_corpus[key] = set(l)
 
 def build_n_gram(line):
+    #n_gram_list_from_line = process_n_gram(line)
     vectorizer.fit_transform([line.lower()])
     names = vectorizer.get_feature_names()
     n_gram.update(list(names))
@@ -119,6 +120,7 @@ def save_files(train_file, eval_file):
 def save_n_gram():
     dngramf = open('ngram.txt', 'w+')
     dngramf.write(str(d_n_gram))
+
 
 # Main code
 
